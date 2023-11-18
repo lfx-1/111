@@ -1,6 +1,7 @@
 package MainAndSon;
 
 import java.io.*;
+import java.nio.file.Files;
 import java.util.*;
 
 public class demo1 {
@@ -9,13 +10,36 @@ public class demo1 {
     private BufferedReader inputFile;
     private BufferedWriter outputFile;
 
-    public static void main(String[] args) {
+    public static void main1() throws IOException{
 
         demo1 kwic = new demo1();
         kwic.input("C:\\Users\\dad\\Desktop\\软件体系结构\\input.txt");
         kwic.shift();
         kwic.alphabetizer();
         kwic.output("C:\\Users\\dad\\Desktop\\软件体系结构\\output.txt");
+
+        System.out.println("input.txt内容：");
+        String s,a;
+        FileReader f1=new FileReader("C:\\Users\\dad\\Desktop\\软件体系结构\\input.txt");
+        BufferedReader f2=new BufferedReader(f1);
+        while ((s=f2.readLine())!=null){
+            System.out.println(s);
+        }
+
+        f2.close();
+        f1.close();
+
+        System.out.println("output.txt内容：");
+        FileReader f3=new FileReader("C:\\Users\\dad\\Desktop\\软件体系结构\\output.txt");
+        BufferedReader f4=new BufferedReader(f3);
+        while ((a=f4.readLine())!=null){
+            System.out.println(a);
+        }
+
+        f4.close();
+        f3.close();
+
+
     }
 
 
